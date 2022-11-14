@@ -7,6 +7,12 @@ class Turn
     @player_answer = ""
   end
 
+  def generate player
+    @player = player
+    @question = Question.new
+    @player_answer = ""
+  end
+
   def run
     puts "#{@player}: #{@question}"
     player_answer = $stdin.gets.chomp.to_i
