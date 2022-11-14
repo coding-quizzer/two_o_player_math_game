@@ -1,34 +1,42 @@
 class Game
   def initialize
-    @players = []
+    @players = Players.new [1,2]
     @footer = 'NEW TURN'
-    @current_index = 0
-    generate_players
-  end
-
-  def generate_players
-    @players << Player.new(1)
-    @players << Player.new(2)
+    @turn = Turn.new(@players.current_player)
   end
 
   def current_player
-    @players[@current_index]
+    @players.current_player
   end
 
-  def switch_player
-    @current_index = (@current_index + 1) % 2
+  def switch_players
+    @players.switch_players
   end
 
-  def score_message
-    "#{@players[0].score} vs #{@players[1].score}"
+  def set_footer
+    return @footer = "NEW TURN" unless @players.round_end
+
+    @footer = "GAME OVER"
   end
-    
 
   def show_footer
-    "----- #{@footer} -----"
+    puts "----- #{@footer} -----"
   end
 
+  def run
+    until @players.round_end
+      @turn.generate current_player
+      @turn.run
+      puts @players.scores
+      set_footer
+      show_footer
+      switch_players
+    end
+    puts 'Good bye!'
+  end
+
+
   private
-  attr_accessor :current_index
+  attr_reader :players
 end
 
