@@ -12,7 +12,7 @@ class Players
 
 
   def switch_players
-    @current_index = other_index(current_index)
+    @current_index = other_index(@current_index)
   end
 
   def player_win(player)
