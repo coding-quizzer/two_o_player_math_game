@@ -55,9 +55,6 @@
     - #### **question**
       - the question for the player
 
-    - #### **score message**
-      - the message reporting the score
-
   - ### Constructor
     - takes in a player
     - sets the player to the given player
@@ -69,29 +66,30 @@
       - returns true if the player is dead
     - #### **correct_answer?**
       - returns true if the player answers with the correct answer
-    - #### **score_message()**
-      - displays message like (P1: 2/3 vs Ps: 3/3) if player is alive
     - #### **run_turn()**
       - runs current turn
 
 ## Game
 
   - ### State Vars
-    - **Header**
+    - **Footer**
       - has NEW TURN if round is not final
 
     - **current_player**
       - the index of the player who currently has a turn
 
-    - **final_score_message**
-      - "" if round is not final
+    - **score_message**
+      - "P1: 2/3 vs P2: 3/3" if round is not final
       - "Player x wins with a score of (score)"
 
     - **final_message**
-      - "" if round is not final
-      - game over header \n final_score_message \n "Thanks_for_playing"
-    - **players[]**
-      - a list of the players
+      ```
+      score_message
+      footer
+      (if end_game) goodbye
+      ```
+      
+      
   
   - ### Constructor
     - takes in no arguments
