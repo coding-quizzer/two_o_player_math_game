@@ -89,8 +89,6 @@
       (if end_game) goodbye
       ```
       
-      
-  
   - ### Constructor
     - takes in no arguments
     - generate a list of two players and add to players array
