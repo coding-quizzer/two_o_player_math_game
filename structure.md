@@ -56,6 +56,9 @@
     - #### **switch_players**
       - switches the current player
 
+    - #### **current_player**
+      - returns the current player
+
 
 ## Turn
 
@@ -90,13 +93,6 @@
   - ### State Vars
     - **Footer**
       - has NEW TURN if round is not final
-
-    - **current_player**
-      - the index of the player who currently has a turn
-
-    - **score_message**
-      - "P1: 2/3 vs P2: 3/3" if round is not final
-      - "Player x wins with a score of (score)"
 
     - **final_message**
       ```
