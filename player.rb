@@ -1,9 +1,14 @@
 class Player
 
-  @@max_lives = 3
+  @@MAX_LIVES = 3
+  @@current_index = 0
+
+  attr_reader :index
   def initialize(number)
     @number = number
-    @lives = @@max_lives
+    @lives = @@MAX_LIVES
+    @index = @@current_index
+    @@current_index = @@current_index + 1
   end
 
   def lose_life()
@@ -15,7 +20,7 @@ class Player
   end
 
   def show_lives()
-    "#{lives}/#{@@max_lives}"
+    "#{lives}/#{@@MAX_LIVES}"
   end
 
   def score()
@@ -25,6 +30,7 @@ class Player
   def to_s
     "Player #{number}"
   end
+
 
   private
 
