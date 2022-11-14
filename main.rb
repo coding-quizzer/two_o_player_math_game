@@ -1,8 +1,12 @@
 require './player.rb'
+require './players.rb'
 require './question.rb'
 require './turn.rb'
+require './game.rb'
 
-player1 = Player.new 1
-turn1 = Turn.new player1
-turn1.run
-puts player1.score
+players = Players.new ([1, 2])
+
+players.current_player.lose_life
+players.current_player.lose_life
+
+puts players.round_end

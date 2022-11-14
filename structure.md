@@ -35,11 +35,27 @@
     - #### **lose_life()**
       - Reduces the value of lives by one
 
-    - #### **lives()** / **to_s()**
-      - The current lives remaining
+    - #### **score()** / **to_s()**
+      - Of the form 'P1: 3/3'
 
     - #### **is_dead()**
       - Boolean - returns true if the player has 0 lives remaining
+
+## Players
+  - ### State Vars
+    - #### **players**
+
+  - ### Constructor
+    - Takes in an array of 2 player numbers
+    - returns an array of 2 players
+  
+  - ### Methods
+    - #### **scores**
+      - of the form 'P1: 2/3 vs P2: 3/3'
+
+    - #### **switch_players**
+      - switches the current player
+
 
 ## Turn
 
